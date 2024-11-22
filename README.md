@@ -10,7 +10,8 @@ and register splash screen assets and `flutter_launcher_icons` to generate launc
 - [x] Installation and setup of commonly used packages.
 - [x] Directory structure.
 - [x] Common interfaces / contracts.
-- [x] Common services.
+- [x] Common service implementations.
 - [x] Common utility classes and functions.
+- [x] Basic pages including: `Authentication`, `Onboarding`.
 
 ## Getting Started

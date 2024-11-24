@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_template/core/utilities/validator.dart';
-import 'controllers/sign_up_page_controller.dart';
 import 'package:get/get.dart';
+
+import '../../core/utilities/validator.dart';
+import 'controllers/sign_up_page_controller.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});

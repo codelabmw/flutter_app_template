@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_template/core/constants/app_colors.dart';
 import 'package:get/get.dart';
 
 import '../../core/utilities/validator.dart';
 import 'controllers/sign_in_page_controller.dart';
+import '../../core/constants/app_colors.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});

@@ -4,6 +4,7 @@ import 'routes.dart';
 import '../../pages/init/init.dart';
 import '../../pages/auth/sign_in_page.dart';
 import '../../pages/auth/forgot_password_page.dart';
+import 'middleware/ensure_user_is_verified_middleware.dart';
 import '../../pages/auth/verification_page.dart';
 import '../../pages/auth/sign_up_page.dart';
 import '../../pages/home/home_page.dart';
@@ -20,6 +21,8 @@ abstract class Routing {
     GetPage(name: Routes.forgotPassword, page: () => const ForgotPasswordPage()),
 
     /// Home / App pages
-    GetPage(name: Routes.home, page: () => const HomePage()),
+    GetPage(name: Routes.home, page: () => const HomePage(), middlewares: [
+      EnsureUserIsVerifiedMiddleware(),
+    ]),
   ];
 }

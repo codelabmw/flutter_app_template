@@ -7,8 +7,12 @@ class MemoryAuthenticationService implements AuthenticationService {
   User? _currentUser;
 
   final List<User> _registry = [
-    User(uuid: 'uuid-000000', verified: false, email: 'user@example.com'),
+    User(uuid: 'uuid-000000', verified: true, email: 'user@example.com'),
   ];
+
+  MemoryAuthenticationService() {
+    _currentUser = _registry.first;
+  }
 
   @override
   Future forgotPassword({required String identifier}) {
@@ -44,8 +48,14 @@ class MemoryAuthenticationService implements AuthenticationService {
   }
 
   @override
-  Future verification() {
-    // TODO: implement verification
+  Future verify({dynamic options}) async {
+    await Future.delayed(const Duration(seconds: 2));
+    _currentUser = User.fromMap(_currentUser!.copyWith(verified: true).toMap());
+  }
+
+  @override
+  Future sendVerificationNotification({options}) {
+    // TODO: implement sendVerificationNotification
     throw UnimplementedError();
   }
 }

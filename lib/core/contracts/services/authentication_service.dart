@@ -19,7 +19,10 @@ abstract interface class AuthenticationService {
   /// Handles forgot password requests.
   Future forgotPassword({required String identifier});
 
+  /// Handle sending verification notification to user.
+  Future sendVerificationNotification({dynamic options});
+
   /// Handles user / account verification. This could be email or phone
   /// verification depending on application needs.
-  Future verification();
+  Future verify({dynamic options});
 }

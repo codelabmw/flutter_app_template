@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-import 'core/models/user.dart';
 import 'core/services/app_connectivity_service.dart';
 import 'core/contracts/services/authentication_service.dart';
 import 'core/services/memory/memory_authentication_service.dart';
@@ -22,8 +21,5 @@ class AppBindings extends Bindings {
 
     // Controllers
     Get.put(MainController(), permanent: true);
-
-    // Global State
-    Get.put(User, builder: () => (Get.find<MainController>()).user);
   }
 }

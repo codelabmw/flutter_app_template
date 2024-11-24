@@ -11,7 +11,7 @@ class MemoryAuthenticationService implements AuthenticationService {
   ];
 
   MemoryAuthenticationService() {
-    _currentUser = _registry.first;
+    _currentUser = null;
   }
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_template/pages/auth/controllers/verification_page_controller.dart';
 import 'package:get/get.dart';
+
+import 'controllers/verification_page_controller.dart';
 
 class VerificationPage extends StatelessWidget {
   const VerificationPage({super.key});

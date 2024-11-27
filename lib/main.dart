@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -8,7 +10,16 @@ import 'core/routing/routing.dart';
 import 'core/constants/env.dart';
 
 void main() async {
+  // Initialize flutter_dotenv
   await dotenv.load(fileName: '.env');
+
+  // Register google font licenses
+  // Poppins license
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('fonts/Poppins/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
+
   runApp(const App());
 }
 

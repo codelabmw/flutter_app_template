@@ -47,7 +47,68 @@ To further customize the splash screen assets / behavior you can change the `flu
 
 The template uses [google_fonts](<https://pub.dev/packages/google_fonts>) package to load and use fonts from google. By default it uses the `Poppins` font family. You can add other fonts from google by downloading your preferred font family from the official [Google Fonts](<https://fonts.google.com>) website.
 
-After the download, extract the zip file or copy the downloaded files into the `fonts` directory inside a designated subdirectory. Change the `_textTheme` value inside the `lib/core/constants/app_theme.dart` file to globally change your app's font family.
+After the download, extract the zip file or copy the downloaded files into the `fonts` directory inside a designated subdirectory.
+
+Add the font's license to flutter's license registry in `main.dart`.
+
+``` dart
+void main() async {
+  // Other code
+  // ...
+
+  // Register Licenses
+  // Poppins font license
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('fonts/Poppins/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
+
+  runApp(const App());
+}
+```
+
+Change the `_textTheme` value inside the `lib/core/constants/app_theme.dart` file to globally change your app's font family.
+
+``` dart
+// Imports
+// ...
+
+abstract class AppTheme {
+    // Other code
+    // ...
+
+    static final TextTheme _textTheme = GoogleFonts.poppinsTextTheme();
+
+    // ...
+}
+```
+
+### App Secrets
+
+The template uses [flutter_dotenv](<https://pub.dev/packages/flutter_dotenv>) package to manage app secrets such as API keys. All you need to do is add a `.env` file inside the projects root directory. This file should not be source controlled, rather use the `.env.example` file to keep track of environment variable names you used in your `.env` file without specifying the values.
+
+You can then create corresponding variables inside the `lib/core/constants/env.dart` file. Then in your code call the static variables you created using the `Env` class.
+
+``` dart
+// Imports
+// ...
+
+abstract class Env {
+    static final apiKey = dotenv.get('MY_API_KEY', 'DEFAULT');
+}
+```
+
+Then
+
+``` dart
+// Other code
+//...
+
+Future doSomethingWithApi() async {
+    final response = await connectToApiFunction(key: Env.apiKey);
+}
+
+```
 
 ## Epilogue
 

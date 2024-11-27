@@ -1,3 +1,4 @@
+import 'package:flutter_app_template/core/routing/middleware/ensure_user_is_authenticated_middleware.dart';
 import 'package:get/get.dart';
 
 import 'routes.dart';
@@ -22,6 +23,7 @@ abstract class Routing {
 
     /// Home / App pages
     GetPage(name: Routes.home, page: () => const HomePage(), middlewares: [
+      EnsureUserIsAuthenticatedMiddleware(),
       EnsureUserIsVerifiedMiddleware(),
     ]),
   ];

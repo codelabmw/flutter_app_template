@@ -13,8 +13,8 @@ void main() async {
   // Initialize flutter_dotenv
   await dotenv.load(fileName: '.env');
 
-  // Register google font licenses
-  // Poppins license
+  // Register Licenses
+  // Poppins font license
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('fonts/Poppins/OFL.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);

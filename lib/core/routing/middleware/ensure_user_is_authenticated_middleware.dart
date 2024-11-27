@@ -5,13 +5,13 @@ import '../../../pages/init/controllers/main_controller.dart';
 import '../../models/user.dart';
 import '../routes.dart';
 
-class EnsureUserIsVerifiedMiddleware extends GetMiddleware {
+class EnsureUserIsAuthenticatedMiddleware extends GetMiddleware {
   @override
   RouteSettings? redirect(String? route) {
-    User? user = (Get.find<MainController>()).user;
+    final User? user = (Get.find<MainController>()).user;
 
-    if (user != null && !user.verified) {
-      return const RouteSettings(name: Routes.verification);
+    if (user == null) {
+      return const RouteSettings(name: Routes.signin);
     }
 
     return super.redirect(route);

@@ -33,7 +33,9 @@ The template uses [flutter_launcher_icons](<https://pub.dev/packages/flutter_lau
 
 To further customize the launcher assets / behavior you can change the `flutter_launcher_icons.yaml` config file. After customizations run the following command to generate your assets.
 
-> dart run flutter_launcher_icons
+```shell
+dart run flutter_launcher_icons
+```
 
 ### Splash Screen
 
@@ -41,7 +43,9 @@ The template uses [flutter_native_splash](<https://pub.dev/packages/flutter_nati
 
 To further customize the splash screen assets / behavior you can change the `flutter_native_splash.yaml` config file. After customizations run the following command to generate your assets.
 
-> dart run flutter_native_splash:create
+```shell
+dart run flutter_native_splash:create
+```
 
 ### Fonts
 

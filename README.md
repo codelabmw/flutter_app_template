@@ -98,7 +98,7 @@ You can then create corresponding variables inside the `lib/core/constants/env.d
 // ...
 
 abstract class Env {
-    static final apiKey = dotenv.get('MY_API_KEY', 'DEFAULT');
+    static final apiKey = dotenv.get('MY_API_KEY', fallback: 'DEFAULT');
 }
 ```
 

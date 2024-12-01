@@ -1,4 +1,4 @@
-import 'package:flutter_app_template/core/enums/exception_type.dart';
+import '../enums/exception_type.dart';
 
 class BaseAppException implements Exception {
   late final ExceptionType _type;

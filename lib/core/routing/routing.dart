@@ -1,10 +1,10 @@
-import 'package:flutter_app_template/core/routing/middleware/ensure_user_is_authenticated_middleware.dart';
 import 'package:get/get.dart';
 
 import 'routes.dart';
 import '../../pages/init/init.dart';
 import '../../pages/auth/sign_in_page.dart';
 import '../../pages/auth/forgot_password_page.dart';
+import 'middleware/ensure_user_is_authenticated_middleware.dart';
 import 'middleware/ensure_user_is_verified_middleware.dart';
 import '../../pages/auth/verification_page.dart';
 import '../../pages/auth/sign_up_page.dart';

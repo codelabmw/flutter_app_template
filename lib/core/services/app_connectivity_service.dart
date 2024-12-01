@@ -1,4 +1,4 @@
-import 'package:flutter_app_template/core/contracts/services/connectivity_service.dart';
+import '../contracts/services/connectivity_service.dart';
 
 class AppConnectivityService implements ConnectivityService {
   @override

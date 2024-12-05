@@ -19,6 +19,7 @@ class AppBindings extends Bindings {
     Get.put<AuthenticationService>(MemoryAuthenticationService());
     // Get.put<CloudStorageService>(...);
     // Get.put<RestApiService>(...);
+    // Get.put<SharedPreferencesService>(...);
 
     // Controllers
     Get.put(MainController(), permanent: true);

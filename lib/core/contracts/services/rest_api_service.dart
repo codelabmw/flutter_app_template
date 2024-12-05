@@ -1,4 +1,4 @@
-import 'package:flutter_app_template/core/models/api_response.dart';
+import '../../models/api_response.dart';
 
 abstract interface class RestApiService {
   /// Performs a GET HTTP request.

@@ -36,7 +36,7 @@ class SignUpPageController extends GetxController {
       _toggleProcessing();
 
       try {
-        final result = await _authService.signUpWithEmail(
+        final _ = await _authService.signUpWithEmail(
           email: emailController.text,
           password: passwordController.text,
         );

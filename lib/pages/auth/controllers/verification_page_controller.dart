@@ -29,7 +29,7 @@ class VerificationPageController extends GetxController {
       _toggleProcessing();
 
       try {
-        final result = await _authService.verify(options: verificationCodeController.text);
+        final _ = await _authService.verify(options: verificationCodeController.text);
 
         // ....
 

@@ -1,13 +1,13 @@
 abstract class Routes {
-  /// Initial / Landing route
+  // Initial / Landing route
   static const String init = '/';
 
-  /// Authentication routes
+  // Authentication routes
   static const String signup = '/signup';
   static const String signin = '/signin';
   static const String forgotPassword = '/forgot-password';
   static const String verification = '/verification';
 
-  /// Home / App routes
+  // Home / App routes
   static const String home = '/home';
 }

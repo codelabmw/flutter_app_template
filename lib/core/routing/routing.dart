@@ -12,16 +12,16 @@ import '../../pages/home/home_page.dart';
 
 abstract class Routing {
   static final List<GetPage> pages = [
-    /// Initial  / Landing page
+    // Initial  / Landing page
     GetPage(name: Routes.init, page: () => const Init()),
 
-    /// Authentication pages
+    // Authentication pages
     GetPage(name: Routes.signup, page: () => const SignUpPage()),
     GetPage(name: Routes.signin, page: () => const SignInPage()),
     GetPage(name: Routes.verification, page: () => const VerificationPage()),
     GetPage(name: Routes.forgotPassword, page: () => const ForgotPasswordPage()),
 
-    /// Home / App pages
+    // Home / App pages
     GetPage(name: Routes.home, page: () => const HomePage(), middlewares: [
       EnsureUserIsAuthenticatedMiddleware(),
       EnsureUserIsVerifiedMiddleware(),

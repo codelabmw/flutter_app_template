@@ -27,7 +27,7 @@ class ForgotPasswordPageController extends GetxController {
       _toggleProcessing();
 
       try {
-        final result = await _authService.forgotPassword(
+        final _ = await _authService.forgotPassword(
           identifier: emailController.text,
         );
 

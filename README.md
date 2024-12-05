@@ -53,21 +53,20 @@ The template uses [google_fonts](<https://pub.dev/packages/google_fonts>) packag
 
 After the download, extract the zip file or copy the downloaded files into the `fonts` directory inside a designated subdirectory.
 
-Add the font's license to flutter's license registry in `main.dart`.
+Add the font's license to flutter's license registry in `lib\core\services\license_manager.dart`.
 
 ``` dart
-void main() async {
-  // Other code
-  // ...
+// Imports
+// ...
 
-  // Register Licenses
-  // Poppins font license
-  LicenseRegistry.addLicense(() async* {
-    final license = await rootBundle.loadString('fonts/Poppins/OFL.txt');
-    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
-  });
-
-  runApp(const App());
+abstract class LicenseManager {
+  static void register() {
+    // Poppins font license
+    LicenseRegistry.addLicense(() async* {
+      final license = await rootBundle.loadString('fonts/Poppins/OFL.txt');
+      yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+    });
+  }
 }
 ```
 

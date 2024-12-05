@@ -19,6 +19,10 @@ and register splash screen assets, `flutter_launcher_icons` to generate launcher
 
 Create a new repository from the template repository and then clone your created repository on your machine. Outlined below are customizations you should make to fit the theme and needs of your app.
 
+### Change Project Name
+
+After creating your own repository from the template repository, you should change the project name in `pubspace.yaml` to reflect the name of your new project.
+
 ### Change App ID
 
 Make sure to change the app id for all your supported platforms before building your app for production. you can easily achieve this from your favorite editor with the find and replace feature or the equivalent. [Read more on deployment](<https://docs.flutter.dev/deployment>).
